@@ -10,27 +10,37 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-
-  final List<Widget> _tabs =  [
-    IconButton(onPressed: (){}, icon: const Icon(Icons.photo_camera,)),
-     Row(
+  final List<Widget> _tabs = [
+    Row(
       children: [
-        const Tab(text: 'CHATS',),
-        const SizedBox(width: 5,),
+        const Tab(
+          text: 'CHATS',
+        ),
+        const SizedBox(
+          width: 8,
+        ),
         Container(
           padding: const EdgeInsets.all(8.0),
           decoration: const BoxDecoration(
             shape: BoxShape.circle,
             color: Colors.white,
           ),
-          child: const Text('1',style: TextStyle(color: Colors.green,),),
+          child: const Text(
+            '1',
+            style: TextStyle(
+              color: Color(0xFF006054),
+            ),
+          ),
         ),
       ],
     ),
-    const Tab(text: 'STATUS',),
-    const Tab(text: 'CALLS',),
+    const Tab(
+      text: 'STATUS',
+    ),
+    const Tab(
+      text: 'CALLS',
+    ),
   ];
-
 
   @override
   Widget build(BuildContext context) {
@@ -38,32 +48,40 @@ class _HomeScreenState extends State<HomeScreen> {
       length: _tabs.length,
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.green,
-          title: const Text('WhatsApp',),
+          backgroundColor: const Color(0xFF006054),
+          title: const Text(
+            'WhatsApp',
+            style: TextStyle(
+              fontSize: 22,
+            ),
+          ),
           centerTitle: false,
           actions: [
-            IconButton(onPressed: (){
-              Navigator.of(context).push(CupertinoPageRoute(builder: (context)=> const SearchScreen(),),);
-            }, icon: const Icon(Icons.search),),
-            IconButton(onPressed: (){}, icon: const Icon(Icons.more_vert),),
+            IconButton(
+              onPressed: () {
+                Navigator.of(context).push(
+                  CupertinoPageRoute(
+                    builder: (context) => const SearchScreen(),
+                  ),
+                );
+              },
+              icon: const Icon(Icons.search),
+            ),
+            IconButton(
+              onPressed: () {},
+              icon: const Icon(Icons.more_vert),
+            ),
           ],
-          bottom: TabBar(
-            isScrollable: true,
-            tabs: _tabs,
-            labelColor: Colors.white,
-            indicatorColor: Colors.white,
-            indicatorPadding: const EdgeInsets.symmetric(horizontal: 5),
-          ),
+          bottom: HomeTabBar(tabs: _tabs),
         ),
         floatingActionButton: FloatingActionButton(
-          onPressed: () {  },
+          onPressed: () {},
           backgroundColor: Colors.green,
           child: const Icon(Icons.chat_bubble),
         ),
         body: TabBarView(
           children: [
-            Container(),
-            Container(),
+            const ChatTabScreen(),
             Container(),
             Container(),
           ],
