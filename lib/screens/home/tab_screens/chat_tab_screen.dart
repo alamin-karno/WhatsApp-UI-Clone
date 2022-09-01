@@ -7,6 +7,8 @@ class ChatTabScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
       padding: const EdgeInsets.all(15),
       itemCount: chatList.length,
       itemBuilder: (context, index) {
