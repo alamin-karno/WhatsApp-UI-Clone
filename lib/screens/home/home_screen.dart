@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-import '../screens.dart';
+import 'package:whatsapp_clone/screens/screens.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -21,7 +20,7 @@ class _HomeScreenState extends State<HomeScreen> {
           width: 8,
         ),
         Container(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(6.0),
           decoration: const BoxDecoration(
             shape: BoxShape.circle,
             color: Colors.white,
@@ -30,6 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
             '1',
             style: TextStyle(
               color: Color(0xFF006054),
+              fontSize: 14,
             ),
           ),
         ),
@@ -48,44 +48,52 @@ class _HomeScreenState extends State<HomeScreen> {
     return DefaultTabController(
       length: _tabs.length,
       child: Scaffold(
-        appBar: AppBar(
-          backgroundColor: const Color(0xFF006054),
-          title: const Text(
-            'WhatsApp',
-            style: TextStyle(
-              fontSize: 22,
-            ),
-          ),
-          centerTitle: false,
-          actions: [
-            IconButton(
-              onPressed: () {
-                Navigator.of(context).push(
-                  CupertinoPageRoute(
-                    builder: (context) => const SearchScreen(),
-                  ),
-                );
-              },
-              icon: const Icon(Icons.search),
-            ),
-            IconButton(
-              onPressed: () {},
-              icon: const Icon(Icons.more_vert),
-            ),
-          ],
-          bottom: HomeTabBar(tabs: _tabs),
-        ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {},
           backgroundColor: Colors.green,
           child: const Icon(Icons.chat_bubble),
         ),
-        body: TabBarView(
-          children: [
-            const ChatTabScreen(),
-            Container(),
-            Container(),
+        body: NestedScrollView(
+          floatHeaderSlivers: true,
+          headerSliverBuilder: (context, innerBoxIsScroll) => [
+            SliverAppBar(
+              pinned: true,
+              snap: true,
+              floating: true,
+              backgroundColor: const Color(0xFF006054),
+              title: const Text(
+                'WhatsApp',
+                style: TextStyle(
+                  fontSize: 22,
+                ),
+              ),
+              centerTitle: false,
+              actions: [
+                IconButton(
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      CupertinoPageRoute(
+                        builder: (context) => const SearchScreen(),
+                      ),
+                    );
+                  },
+                  icon: const Icon(Icons.search),
+                ),
+                IconButton(
+                  onPressed: () {},
+                  icon: const Icon(Icons.more_vert),
+                ),
+              ],
+              bottom: HomeTabBar(tabs: _tabs),
+            )
           ],
+          body: TabBarView(
+            children: [
+              const ChatTabScreen(),
+              Container(),
+              Container(),
+            ],
+          ),
         ),
       ),
     );
