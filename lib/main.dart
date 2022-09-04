@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'config/config.dart';
 import 'screens/screens.dart';
 
 void main() {
@@ -15,6 +16,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'WhatsApp',
+      scrollBehavior: AppScrollBehavior(),
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -22,4 +24,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
