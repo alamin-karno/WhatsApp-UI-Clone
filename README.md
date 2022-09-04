@@ -14,11 +14,11 @@ Note: Ensure you add the effect - on scrolling down through the conversations li
 
 ### Live Site:
 
-##### [WhatsApp Web](#)
+##### [WhatsApp Web](https://alamin-karno.github.io/WhatsApp-UI-Clone/#/)
 
 ### Download APK/Software:
 
-##### [WhatsApp APK - v1.0.0](#)
+##### [WhatsApp APK - v1.0.0](https://github.com/alamin-karno/WhatsApp-UI-Clone/releases/tag/v1.0.0)
 
 ## Phone Screenshots:
 
