@@ -84,7 +84,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   icon: const Icon(Icons.more_vert),
                 ),
               ],
-              bottom: HomeTabBar(tabs: _tabs),
+              bottom: HomeTabBar(
+                tabs: _tabs,
+              ),
             )
           ],
           body: TabBarView(
