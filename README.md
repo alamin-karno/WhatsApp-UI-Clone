@@ -1,8 +1,8 @@
 # WhatsApp Clone (UI) - Flutter
 
-This is whatsapp clone UI made with flutter. To made this I used flutter and dart. To make WhatsApp Like Appbar I user SliverAppbar with NestedScrollView.
+WhatsApp Clone (UI) is Whatsapp clone UI made with flutter. To make this, I used flutter and dart. To make WhatsApp Like App bar, I used SliverAppbar with NestedScrollView. Use TabView to show Chat, Status & Calls Tab.
 
-This project is made for learning purpose. I made this project after joining 3 days Techofic Flutter Bootcamp 2022 by [TECHOFIC](https://www.youtube.com/watch?v=vKTAlsx58rs&list=PL0yFs0YrWE-z2j-jd4IfCwaixZo9tqNOT).
+WhatsApp Clone (UI)  project is done for learning purposes. I did this project after joining three days Techofic Flutter Bootcamp 2022 by [TECHOFIC](https://www.youtube.com/watch?v=vKTAlsx58rs&list=PL0yFs0YrWE-z2j-jd4IfCwaixZo9tqNOT).
 
 ## Assements Task:
 UI Cloning - Design this WhatsApp home screen as close as possible from the screenshot below.
